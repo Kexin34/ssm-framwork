@@ -24,6 +24,14 @@
     <div class="row">
         <div class="col-md-4 column">
             <a class="btn btn-primary" href="${pageContext.request.contextPath}/book/toAddBook">新增</a>
+            <a class="btn btn-primary" href="${pageContext.request.contextPath}/book/allBook">显示全部书籍</a>
+        </div>
+        <div class="col-md-4 column">
+            <%--查询书籍--%>
+            <form action="${pageContext.request.contextPath}/book/queryBook" method="post" style="float:right">
+                <input type="text" name="queryBookName" class="form-control" placeholder="请输入要查询书籍名称">
+                <input type="submit" class="btn btn-primary" value="查询">
+            </form>
         </div>
     </div>
 
@@ -49,6 +57,7 @@
                         <td>${book.getBookCounts()}</td>
                         <td>${book.getDetail()}</td>
                         <td>
+                            <span style="color: red; font-weight: bold">${error}</span>
                             <a href="${pageContext.request.contextPath}/book/toUpdateBook?id=${book.getBookID()}">更改</a> |
                             <a href="${pageContext.request.contextPath}/book/del/${book.getBookID()}">删除</a>
                         </td>
