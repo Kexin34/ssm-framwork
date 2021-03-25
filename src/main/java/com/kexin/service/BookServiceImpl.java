@@ -2,9 +2,11 @@ package com.kexin.service;
 
 import com.kexin.dao.BookMapper;
 import com.kexin.pojo.Books;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+//@Service
 public class BookServiceImpl implements BookService {
 
     // service业务层调用dao层：组合dao
